@@ -7,20 +7,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#0a0a0f',
-        surface: '#12121a',
-        surfaceLight: '#1a1a24',
-        border: '#2a2a3a',
+        background: 'rgb(var(--color-background) / <alpha-value>)',
+        surface: 'rgb(var(--color-surface) / <alpha-value>)',
+        surfaceLight: 'rgb(var(--color-surface-light) / <alpha-value>)',
+        border: 'rgb(var(--color-border) / <alpha-value>)',
         text: {
-          primary: '#ffffff',
-          secondary: '#a0a0b0',
-          muted: '#6a6a7a',
+          primary: 'rgb(var(--color-text-primary) / <alpha-value>)',
+          secondary: 'rgb(var(--color-text-secondary) / <alpha-value>)',
+          muted: 'rgb(var(--color-text-muted) / <alpha-value>)',
         },
         accent: {
-          purple: '#8b5cf6',
-          blue: '#3b82f6',
-          cyan: '#06b6d4',
-          pink: '#ec4899',
+          purple: 'rgb(var(--color-accent-purple) / <alpha-value>)',
+          blue: 'rgb(var(--color-accent-blue) / <alpha-value>)',
+          cyan: 'rgb(var(--color-accent-cyan) / <alpha-value>)',
+          pink: 'rgb(var(--color-accent-pink) / <alpha-value>)',
         }
       },
       fontFamily: {

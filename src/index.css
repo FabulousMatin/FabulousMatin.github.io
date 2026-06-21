@@ -3,6 +3,36 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-background: 18 20 18;
+    --color-surface: 28 31 28;
+    --color-surface-light: 39 44 39;
+    --color-border: 68 74 68;
+    --color-text-primary: 255 255 255;
+    --color-text-secondary: 209 214 207;
+    --color-text-muted: 145 155 145;
+    --color-accent-purple: 95 109 74;
+    --color-accent-blue: 84 99 61;
+    --color-accent-cyan: 118 133 92;
+    --color-accent-pink: 62 71 52;
+  }
+
+  :root[data-theme='light'] {
+    --color-background: 245 246 240;
+    --color-surface: 255 255 250;
+    --color-surface-light: 231 235 227;
+    --color-border: 208 214 205;
+    --color-text-primary: 31 37 31;
+    --color-text-secondary: 59 69 59;
+    --color-text-muted: 102 113 102;
+    --color-accent-purple: 95 109 74;
+    --color-accent-blue: 84 99 61;
+    --color-accent-cyan: 118 133 92;
+    --color-accent-pink: 62 71 52;
+  }
+}
+
+@layer base {
   * {
     box-sizing: border-box;
   }
@@ -14,6 +44,10 @@
   body {
     @apply bg-background text-text-primary font-sans antialiased;
     overflow-x: hidden;
+    background:
+      radial-gradient(circle at top, rgb(var(--color-accent-cyan) / 0.07), transparent 34%),
+      radial-gradient(circle at bottom right, rgb(var(--color-accent-purple) / 0.06), transparent 26%),
+      rgb(var(--color-background));
   }
 
   ::selection {
@@ -40,25 +74,25 @@
 
 @layer components {
   .glass {
-    @apply bg-surface/60 backdrop-blur-xl border border-border/50;
+    @apply bg-surface/80 backdrop-blur-xl border border-border/60;
   }
 
   .glass-hover {
-    @apply transition-all duration-300 hover:bg-surface/80 hover:border-border/80 hover:shadow-lg hover:shadow-accent-purple/5;
+    @apply transition-all duration-300 hover:bg-surface hover:border-border/80 hover:shadow-lg hover:shadow-black/10;
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-purple via-accent-blue to-accent-cyan;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-cyan to-accent-purple;
   }
 
   .btn-primary {
-    @apply px-6 py-3 bg-gradient-to-r from-accent-purple to-accent-blue text-white font-medium rounded-xl
-           transition-all duration-300 hover:shadow-lg hover:shadow-accent-purple/25 hover:scale-105
+    @apply px-6 py-3 bg-accent-blue text-white font-medium rounded-xl
+           transition-all duration-300 hover:shadow-lg hover:shadow-black/10 hover:scale-105
            active:scale-95;
   }
 
   .btn-secondary {
-    @apply px-6 py-3 bg-surface/80 border border-border text-text-primary font-medium rounded-xl
+    @apply px-6 py-3 bg-surface/85 border border-border text-text-primary font-medium rounded-xl
            transition-all duration-300 hover:bg-surface hover:border-border/80 hover:shadow-lg
            active:scale-95;
   }
@@ -85,8 +119,8 @@
 
   .bg-grid {
     background-image:
-      linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+      linear-gradient(to right, rgb(var(--color-text-primary) / 0.025) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--color-text-primary) / 0.025) 1px, transparent 1px);
     background-size: 60px 60px;
   }
 }

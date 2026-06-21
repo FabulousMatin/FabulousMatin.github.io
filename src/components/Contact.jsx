@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { personalInfo, socialLinks } from '../data/portfolio';
-import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter, CheckCircle } from 'lucide-react';
+import { Mail, MapPin, Phone, Github, Linkedin, CheckCircle, SendHorizontal } from 'lucide-react';
 
 const iconMap = {
   github: Github,
   linkedin: Linkedin,
-  twitter: Twitter,
+  mail: Mail,
+  telegram: SendHorizontal,
 };
 
 export default function Contact() {
@@ -22,13 +23,21 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
+    const subject = encodeURIComponent(`Portfolio message from ${formState.name || 'Visitor'}`);
+    const body = encodeURIComponent(
+      `Name: ${formState.name}\nEmail: ${formState.email}\n\n${formState.message}`
+    );
+    const mailtoUrl = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
+
+    window.location.href = mailtoUrl;
+
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
       setFormState({ name: '', email: '', message: '' });
 
       setTimeout(() => setSubmitted(false), 3000);
-    }, 1500);
+    }, 400);
   };
 
   return (
@@ -196,8 +205,8 @@ export default function Contact() {
                       </>
                     ) : (
                       <>
-                        <Send className="w-5 h-5" />
-                        Send Message
+                        <SendHorizontal className="w-5 h-5" />
+                        Open Email
                       </>
                     )}
                   </button>

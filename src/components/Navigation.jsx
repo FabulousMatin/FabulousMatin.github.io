@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, MoonStar, SunMedium } from 'lucide-react';
 
 const navLinks = [
   { name: 'About', href: '#about' },
@@ -11,7 +11,7 @@ const navLinks = [
   { name: 'Contact', href: '#contact' },
 ];
 
-export default function Navigation() {
+export default function Navigation({ theme, onToggleTheme }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
@@ -55,10 +55,6 @@ export default function Navigation() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <a href="#" className="text-xl font-bold gradient-text">
-            MB
-          </a>
-
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
@@ -76,13 +72,23 @@ export default function Navigation() {
             ))}
           </div>
 
-          <button
-            className="md:hidden text-text-primary"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              className="hidden md:inline-flex p-2 rounded-full glass text-text-primary"
+              onClick={onToggleTheme}
+              aria-label="Toggle theme"
+            >
+              {theme === 'light' ? <MoonStar size={18} /> : <SunMedium size={18} />}
+            </button>
+
+            <button
+              className="md:hidden text-text-primary"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </motion.nav>
 

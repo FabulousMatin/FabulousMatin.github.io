@@ -1,6 +1,13 @@
 import { motion } from 'framer-motion';
 import { personalInfo, socialLinks } from '../data/portfolio';
-import { Heart } from 'lucide-react';
+import { Heart, SendHorizontal, Github, Linkedin, Mail } from 'lucide-react';
+
+const iconMap = {
+  github: Github,
+  linkedin: Linkedin,
+  mail: Mail,
+  telegram: SendHorizontal,
+};
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -30,29 +37,25 @@ export default function Footer() {
             transition={{ delay: 0.1 }}
             className="flex items-center gap-6"
           >
-            {socialLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-muted hover:text-white transition-colors"
-                aria-label={link.name}
-              >
-                {link.name}
-              </a>
-            ))}
+            {socialLinks.map((link) => {
+              const Icon = iconMap[link.icon];
+              return (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-text-muted hover:text-white transition-colors"
+                  aria-label={link.name}
+                >
+                  <Icon className="w-4 h-4" />
+                  {link.name}
+                </a>
+              );
+            })}
           </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-text-muted text-sm flex items-center gap-1"
-          >
-            Made with <Heart className="w-4 h-4 text-red-500" /> in {personalInfo.location}
-          </motion.p>
+
         </div>
 
         <motion.div

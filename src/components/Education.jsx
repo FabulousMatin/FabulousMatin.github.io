@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { education, certifications, honors } from '../data/portfolio';
-import { GraduationCap, Award, Trophy, Calendar, MapPin, ChevronRight } from 'lucide-react';
+import { GraduationCap, Award, Trophy, Calendar, MapPin, ExternalLink } from 'lucide-react';
 
 export default function Education() {
   return (
@@ -20,12 +20,7 @@ export default function Education() {
 
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="space-y-8">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
+              <div>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="p-2 rounded-lg bg-surface">
                     <GraduationCap className="w-5 h-5 text-accent-purple" />
@@ -40,38 +35,35 @@ export default function Education() {
                         <Calendar className="w-4 h-4" />
                         {edu.period}
                       </span>
-                      <span className="flex items-center gap-1">
-                        <MapPin className="w-4 h-4" />
-                        {edu.location}
-                      </span>
                     </div>
 
                     <h4 className="text-lg font-semibold text-white mb-1">{edu.institution}</h4>
                     <p className="text-accent-purple mb-3">{edu.degree}</p>
 
-                    <div className="flex items-center gap-2 mb-4 text-sm">
+                    <div className="flex items-center gap-2 mb-5 text-sm">
                       <span className="text-text-muted">GPA:</span>
                       <span className="text-green-400 font-medium">{edu.gpa}</span>
                     </div>
 
-                    <ul className="space-y-2">
-                      {edu.achievements.map((achievement, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-text-secondary">
-                          <ChevronRight className="w-4 h-4 text-accent-purple mt-0.5 flex-shrink-0" />
-                          {achievement}
-                        </li>
+                    <div className="space-y-3">
+                      {edu.achievements.map((item) => (
+                        <div key={`${item.role}-${item.course}`} className="rounded-xl bg-surface/70 border border-border/50 p-4">
+                          <div className="flex flex-wrap items-center gap-2 mb-2">
+                            <span className="px-2 py-1 rounded-full bg-accent-purple/10 text-accent-purple text-xs">{item.role}</span>
+                            <span className="font-medium text-white">{item.course}</span>
+                          </div>
+                          <div className="grid sm:grid-cols-2 gap-2 text-sm text-text-secondary">
+                            <p>Instructor: {item.instructor}</p>
+                            <p>Semesters: {item.semesters}</p>
+                          </div>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 ))}
-              </motion.div>
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2, duration: 0.6 }}
-              >
+              <div>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="p-2 rounded-lg bg-surface">
                     <Award className="w-5 h-5 text-accent-blue" />
@@ -91,18 +83,23 @@ export default function Education() {
                           {cert.date}
                         </span>
                       </div>
+
+                      <a
+                        href={cert.validationUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 inline-flex items-center gap-2 text-sm text-accent-cyan hover:underline"
+                      >
+                        Validate certificate
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-            >
+            <div>
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-2 rounded-lg bg-surface">
                   <Trophy className="w-5 h-5 text-accent-cyan" />
@@ -131,7 +128,7 @@ export default function Education() {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>
