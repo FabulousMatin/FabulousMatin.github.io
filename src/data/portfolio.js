@@ -190,23 +190,6 @@ export const experience = [
       "Architecture review"
     ]
   },
-  {
-    company: "UTeam",
-    role: "Co-founder / Engineer",
-    period: "2025",
-    location: "Remote",
-    summary: "Participated in an early startup attempt that ultimately did not work out, but informed later product and engineering decisions.",
-    achievements: [
-      "Helped validate product direction, build prototypes, and test user workflows.",
-      "Learned to make faster technical tradeoffs under constrained startup conditions.",
-      "Carried lessons from a failed launch into later work on reliability and scope control."
-    ],
-    highlights: [
-      "Startup prototyping",
-      "Product validation",
-      "Failure-informed learning"
-    ]
-  }
 ];
 
 export const projects = [
