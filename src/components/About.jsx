@@ -17,7 +17,7 @@ export default function About() {
             About <span className="gradient-text">Me</span>
           </h2>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="space-y-8">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -25,12 +25,28 @@ export default function About() {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="space-y-6"
             >
-              <p className="text-lg text-text-secondary leading-relaxed">
+              <p className="text-lg text-text-secondary leading-relaxed max-w-4xl">
                 {personalInfo.summary}
               </p>
 
             </motion.div>
 
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+            >
+              <h3 className="text-xl font-semibold text-text-primary mb-4">Soft Skills</h3>
+              <ul className="space-y-3">
+                {personalInfo.profile.map((skill, index) => (
+                  <li key={index} className="flex items-start gap-3 text-text-secondary">
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent-cyan flex-shrink-0" />
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
           </div>
         </motion.div>
       </div>

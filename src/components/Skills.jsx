@@ -21,6 +21,9 @@ export default function Skills() {
   const activeSkillName = activeSkill?.split(':')[1];
   const activeSkillItem = skills[activeCategory]?.find((skill) => skill.name === activeSkillName);
   const detail = activeSkillItem?.detail || 'Practical experience in this area.';
+  const level = activeSkillItem?.level;
+  const years = activeSkillItem?.years;
+  const projects = activeSkillItem?.projects || [];
 
   return (
     <section id="skills" className="section relative">
@@ -54,7 +57,7 @@ export default function Skills() {
                     <div className="p-2 rounded-lg bg-surface">
                       <CategoryIcon className="w-5 h-5 text-accent-blue" />
                     </div>
-                    <h3 className="text-lg font-semibold text-white">{category}</h3>
+                    <h3 className="text-lg font-semibold text-text-primary">{category}</h3>
                   </div>
 
                   <div className="grid grid-cols-2 gap-3">
@@ -93,12 +96,38 @@ export default function Skills() {
             transition={{ duration: 0.25 }}
             className="mt-6 glass rounded-2xl p-5 border border-border/60"
           >
-            <p className="text-xs uppercase tracking-[0.2em] text-text-muted mb-2">Skill Detail</p>
-            <div className="flex items-center gap-3 mb-2">
+            <p className="text-xs uppercase tracking-[0.2em] text-text-muted mb-3">Skill Detail</p>
+            <div className="flex items-center gap-3 mb-3">
               <div className="h-2 w-2 rounded-full bg-accent-blue" />
-              <h3 className="text-lg font-semibold text-white">{activeSkillName}</h3>
+              <h3 className="text-lg font-semibold text-text-primary">{activeSkillName}</h3>
             </div>
-            <p className="text-sm text-text-secondary max-w-3xl">{detail}</p>
+            <div className="flex flex-wrap gap-4 mb-4 text-sm">
+              {level && (
+                <span className="flex items-center gap-1.5">
+                  <span className="text-text-muted">Level:</span>
+                  <span className="text-text-secondary font-medium">{level}</span>
+                </span>
+              )}
+              {years && (
+                <span className="flex items-center gap-1.5">
+                  <span className="text-text-muted">Years:</span>
+                  <span className="text-text-secondary font-medium">{years}+</span>
+                </span>
+              )}
+            </div>
+            <p className="text-sm text-text-secondary max-w-3xl mb-4">{detail}</p>
+            {projects.length > 0 && (
+              <div>
+                <p className="text-xs text-text-muted mb-2">Related Projects</p>
+                <div className="flex flex-wrap gap-2">
+                  {projects.map((project) => (
+                    <span key={project} className="px-2.5 py-1 rounded-full bg-surface text-xs text-text-secondary border border-border/60">
+                      {project}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
           </motion.div>
         </motion.div>
       </div>

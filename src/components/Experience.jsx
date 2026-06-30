@@ -50,7 +50,7 @@ export default function Experience() {
                         <div>
                           <div className="flex items-center gap-3 mb-2">
                             <Building2 className="w-5 h-5 text-accent-blue" />
-                            <h3 className="text-xl font-semibold text-white">{exp.company}</h3>
+                            <h3 className="text-xl font-semibold text-text-primary">{exp.company}</h3>
                           </div>
                           <p className="text-accent-blue mb-2">{exp.role}</p>
                           <p className="text-sm text-text-secondary max-w-3xl">{exp.summary}</p>
@@ -92,7 +92,8 @@ export default function Experience() {
                             <div className="pt-5 mt-5 border-t border-border/60">
                               <ul className="space-y-3">
                                 {exp.achievements.map((achievement) => (
-                                  <li key={achievement} className="text-sm text-text-secondary leading-relaxed">
+                                  <li key={achievement} className="flex items-start gap-3 text-sm text-text-secondary leading-relaxed">
+                                    <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-accent-blue flex-shrink-0" />
                                     {achievement}
                                   </li>
                                 ))}

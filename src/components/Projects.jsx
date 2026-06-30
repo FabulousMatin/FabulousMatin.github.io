@@ -29,7 +29,7 @@ export default function Projects() {
           >
             <div className="flex items-center justify-between gap-4">
               <div>
-                <h3 className="text-2xl font-semibold text-white mb-3">{project.name}</h3>
+                <h3 className="text-2xl font-semibold text-text-primary mb-3">{project.name}</h3>
                 <p className="text-text-secondary max-w-3xl">{project.description}</p>
               </div>
               <span className="p-3 rounded-full bg-surface border border-border/60">
@@ -67,7 +67,7 @@ export default function Projects() {
             >
               <div className="flex items-start justify-between gap-4 p-6 border-b border-border/60">
                 <div>
-                  <h3 className="text-2xl font-semibold text-white">{activeProject.name}</h3>
+                  <h3 className="text-2xl font-semibold text-text-primary">{activeProject.name}</h3>
                 </div>
                 <button type="button" onClick={() => setActiveProject(null)} className="p-2 rounded-full bg-surface hover:bg-surfaceLight">
                   <X className="w-5 h-5 text-text-primary" />

@@ -25,7 +25,7 @@ export default function Education() {
                   <div className="p-2 rounded-lg bg-surface">
                     <GraduationCap className="w-5 h-5 text-accent-purple" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white">Education</h3>
+                  <h3 className="text-xl font-semibold text-text-primary">Education</h3>
                 </div>
 
                 {education.map((edu, index) => (
@@ -37,20 +37,16 @@ export default function Education() {
                       </span>
                     </div>
 
-                    <h4 className="text-lg font-semibold text-white mb-1">{edu.institution}</h4>
+                    <h4 className="text-lg font-semibold text-text-primary mb-1">{edu.institution}</h4>
                     <p className="text-accent-purple mb-3">{edu.degree}</p>
 
-                    <div className="flex items-center gap-2 mb-5 text-sm">
-                      <span className="text-text-muted">GPA:</span>
-                      <span className="text-green-400 font-medium">{edu.gpa}</span>
-                    </div>
 
                     <div className="space-y-3">
                       {edu.achievements.map((item) => (
                         <div key={`${item.role}-${item.course}`} className="rounded-xl bg-surface/70 border border-border/50 p-4">
                           <div className="flex flex-wrap items-center gap-2 mb-2">
                             <span className="px-2 py-1 rounded-full bg-accent-purple/10 text-accent-purple text-xs">{item.role}</span>
-                            <span className="font-medium text-white">{item.course}</span>
+                            <span className="font-medium text-text-primary">{item.course}</span>
                           </div>
                           <div className="grid sm:grid-cols-2 gap-2 text-sm text-text-secondary">
                             <p>Instructor: {item.instructor}</p>
@@ -68,7 +64,7 @@ export default function Education() {
                   <div className="p-2 rounded-lg bg-surface">
                     <Award className="w-5 h-5 text-accent-blue" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white">Certifications</h3>
+                  <h3 className="text-xl font-semibold text-text-primary">Certifications</h3>
                 </div>
 
                 <div className="space-y-4">
@@ -76,7 +72,7 @@ export default function Education() {
                     <div key={index} className="glass rounded-xl p-4 glass-hover">
                       <div className="flex items-start justify-between gap-4">
                         <div>
-                          <h4 className="font-medium text-white mb-1">{cert.name}</h4>
+                          <h4 className="font-medium text-text-primary mb-1">{cert.name}</h4>
                           <p className="text-sm text-text-muted">{cert.issuer}</p>
                         </div>
                         <span className="text-xs text-accent-purple bg-accent-purple/10 px-2 py-1 rounded-full">
@@ -104,7 +100,7 @@ export default function Education() {
                 <div className="p-2 rounded-lg bg-surface">
                   <Trophy className="w-5 h-5 text-accent-cyan" />
                 </div>
-                <h3 className="text-xl font-semibold text-white">Honors & Awards</h3>
+                <h3 className="text-xl font-semibold text-text-primary">Honors & Awards</h3>
               </div>
 
               <div className="space-y-4">
@@ -116,7 +112,7 @@ export default function Education() {
                       </div>
                       <div className="flex-1">
                         <div className="flex flex-wrap items-center gap-3 mb-2">
-                          <h4 className="font-semibold text-white">{honor.title}</h4>
+                          <h4 className="font-semibold text-text-primary">{honor.title}</h4>
                           <span className="text-xs text-accent-cyan bg-accent-cyan/10 px-2 py-1 rounded-full">
                             {honor.date}
                           </span>

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, ChevronDown, SendHorizontal } from 'lucide-react';
 import { personalInfo, socialLinks } from '../data/portfolio';
-import personalImage from '../../personal-image.jpeg';
+import personalImage from '../data/personal-image.jpeg';
 
 const iconMap = {
   github: Github,

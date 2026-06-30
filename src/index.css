@@ -18,17 +18,17 @@
   }
 
   :root[data-theme='light'] {
-    --color-background: 245 246 240;
-    --color-surface: 255 255 250;
-    --color-surface-light: 231 235 227;
-    --color-border: 208 214 205;
-    --color-text-primary: 31 37 31;
-    --color-text-secondary: 59 69 59;
-    --color-text-muted: 102 113 102;
-    --color-accent-purple: 95 109 74;
-    --color-accent-blue: 84 99 61;
-    --color-accent-cyan: 118 133 92;
-    --color-accent-pink: 62 71 52;
+    --color-background: 235 238 230;
+    --color-surface: 248 250 245;
+    --color-surface-light: 220 225 215;
+    --color-border: 180 188 175;
+    --color-text-primary: 25 32 25;
+    --color-text-secondary: 50 62 50;
+    --color-text-muted: 90 102 90;
+    --color-accent-purple: 70 85 55;
+    --color-accent-blue: 65 80 48;
+    --color-accent-cyan: 90 110 70;
+    --color-accent-pink: 50 60 40;
   }
 }
 

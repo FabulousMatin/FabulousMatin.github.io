@@ -62,7 +62,7 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="text-xl font-semibold text-white mb-6">Let's connect</h3>
+              <h3 className="text-xl font-semibold text-text-primary mb-6">Let's connect</h3>
 
               <p className="text-text-secondary mb-8">
                 I'm currently open to new opportunities and collaborations. Whether you have a question or just want to say hi, I'll do my best to get back to you!
@@ -78,7 +78,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-sm text-text-muted">Email</p>
-                    <p className="text-white">{personalInfo.email}</p>
+                    <p className="text-text-primary">{personalInfo.email}</p>
                   </div>
                 </a>
 
@@ -88,7 +88,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-sm text-text-muted">Phone</p>
-                    <p className="text-white">{personalInfo.phone}</p>
+                    <p className="text-text-primary">{personalInfo.phone}</p>
                   </div>
                 </div>
 
@@ -98,7 +98,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-sm text-text-muted">Location</p>
-                    <p className="text-white">{personalInfo.location}</p>
+                    <p className="text-text-primary">{personalInfo.location}</p>
                   </div>
                 </div>
               </div>
@@ -115,7 +115,7 @@ export default function Contact() {
                       className="p-3 glass rounded-xl glass-hover"
                       aria-label={link.name}
                     >
-                      <Icon className="w-5 h-5 text-text-secondary hover:text-white" />
+                      <Icon className="w-5 h-5 text-text-secondary hover:text-text-primary" />
                     </a>
                   );
                 })}
@@ -140,7 +140,7 @@ export default function Contact() {
                       value={formState.name}
                       onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                       className="w-full px-4 py-3 bg-surface/50 border border-border rounded-xl
-                                 text-white placeholder-text-muted
+                                 text-text-primary placeholder-text-muted
                                  focus:outline-none focus:border-accent-purple focus:ring-1 focus:ring-accent-purple
                                  transition-colors"
                       placeholder="John Doe"
@@ -158,7 +158,7 @@ export default function Contact() {
                       value={formState.email}
                       onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                       className="w-full px-4 py-3 bg-surface/50 border border-border rounded-xl
-                                 text-white placeholder-text-muted
+                                 text-text-primary placeholder-text-muted
                                  focus:outline-none focus:border-accent-purple focus:ring-1 focus:ring-accent-purple
                                  transition-colors"
                       placeholder="john@example.com"
@@ -176,7 +176,7 @@ export default function Contact() {
                       onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                       rows={5}
                       className="w-full px-4 py-3 bg-surface/50 border border-border rounded-xl
-                                 text-white placeholder-text-muted resize-none
+                                 text-text-primary placeholder-text-muted resize-none
                                  focus:outline-none focus:border-accent-purple focus:ring-1 focus:ring-accent-purple
                                  transition-colors"
                       placeholder="Your message here..."

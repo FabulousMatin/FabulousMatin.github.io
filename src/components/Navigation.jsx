@@ -64,7 +64,7 @@ export default function Navigation({ theme, onToggleTheme }) {
                 className={`text-sm font-medium transition-colors duration-200 ${
                   activeSection === link.href.substring(1)
                     ? 'text-accent-purple'
-                    : 'text-text-secondary hover:text-white'
+                    : 'text-text-secondary hover:text-text-primary'
                 }`}
               >
                 {link.name}
