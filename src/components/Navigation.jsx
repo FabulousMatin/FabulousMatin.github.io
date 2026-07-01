@@ -61,9 +61,9 @@ export default function Navigation({ theme, onToggleTheme }) {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className={`text-sm font-medium transition-colors duration-200 ${
+                className={`text-sm font-medium transition-all duration-200 px-3 py-1 rounded-full ${
                   activeSection === link.href.substring(1)
-                    ? 'text-accent-purple'
+                    ? 'text-white bg-accent-purple/80 backdrop-blur-sm'
                     : 'text-text-secondary hover:text-text-primary'
                 }`}
               >

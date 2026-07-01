@@ -30,23 +30,6 @@ export default function About() {
               </p>
 
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-            >
-              <h3 className="text-xl font-semibold text-text-primary mb-4">Soft Skills</h3>
-              <ul className="space-y-3">
-                {personalInfo.profile.map((skill, index) => (
-                  <li key={index} className="flex items-start gap-3 text-text-secondary">
-                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent-cyan flex-shrink-0" />
-                    {skill}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
           </div>
         </motion.div>
       </div>

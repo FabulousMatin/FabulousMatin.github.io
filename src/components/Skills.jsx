@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { skills } from '../data/portfolio';
 import * as Icons from 'lucide-react';
@@ -11,20 +10,6 @@ const categoryIcons = {
 };
 
 export default function Skills() {
-  const firstCategory = Object.keys(skills)[0];
-  const firstSkill = skills[firstCategory]?.[0];
-  const [activeSkill, setActiveSkill] = useState(
-    firstCategory && firstSkill ? `${firstCategory}:${firstSkill.name}` : ''
-  );
-
-  const activeCategory = activeSkill?.split(':')[0];
-  const activeSkillName = activeSkill?.split(':')[1];
-  const activeSkillItem = skills[activeCategory]?.find((skill) => skill.name === activeSkillName);
-  const detail = activeSkillItem?.detail || 'Practical experience in this area.';
-  const level = activeSkillItem?.level;
-  const years = activeSkillItem?.years;
-  const projects = activeSkillItem?.projects || [];
-
   return (
     <section id="skills" className="section relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent-blue/5 to-transparent" />
@@ -36,9 +21,19 @@ export default function Skills() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title">
-            Technical <span className="gradient-text">Skills</span>
-          </h2>
+          <div className="flex items-center gap-3 mb-12">
+            <h2 className="section-title mb-0">
+              Technical <span className="gradient-text">Skills</span>
+            </h2>
+            <div className="group relative">
+              <Icons.Info className="w-5 h-5 text-text-muted cursor-help" />
+              <div className="absolute left-0 top-full mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10 w-64">
+                <div className="bg-black border border-zinc-600 rounded-lg px-3 py-2 shadow-lg text-xs text-white leading-relaxed">
+                  Scores are relative to each other and to my experience — no one can claim 5/5 in anything! :)
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div className="grid gap-6 md:grid-cols-2">
             {Object.entries(skills).map(([category, skillList], categoryIndex) => {
@@ -60,27 +55,32 @@ export default function Skills() {
                     <h3 className="text-lg font-semibold text-text-primary">{category}</h3>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="flex flex-wrap gap-2">
                     {skillList.map((skill) => {
                       const SkillIcon = Icons[skill.icon] || Icons.Code2;
-                      const isActive = activeSkill === `${category}:${skill.name}`;
 
                       return (
-                        <button
+                        <span
                           key={skill.name}
-                          type="button"
-                          onMouseEnter={() => setActiveSkill(`${category}:${skill.name}`)}
-                          onFocus={() => setActiveSkill(`${category}:${skill.name}`)}
-                          onClick={() => setActiveSkill(`${category}:${skill.name}`)}
-                          className={`flex items-center gap-2 rounded-xl border px-3 py-3 text-left transition-all duration-200 ${
-                            isActive
-                              ? 'border-accent-blue bg-accent-blue/10 shadow-lg shadow-black/10 scale-[1.02]'
-                              : 'border-border/50 bg-surface/70 hover:border-accent-blue/60 hover:bg-surface'
-                          }`}
+                          className="group relative flex items-center gap-2 rounded-xl border border-border bg-surface px-3 py-2 transition-all duration-200 hover:border-accent-blue hover:bg-black cursor-default"
                         >
-                          <SkillIcon className="w-4 h-4 text-accent-blue flex-shrink-0" />
-                          <span className="text-sm text-text-primary truncate">{skill.name}</span>
-                        </button>
+                          <SkillIcon className="w-4 h-4 text-accent-blue flex-shrink-0 transition-colors duration-200 group-hover:text-accent-cyan" />
+                          <span className="text-sm text-text-primary transition-colors duration-200 group-hover:text-white font-medium">{skill.name}</span>
+                          <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                            <div className="flex items-center gap-1.5 bg-white border border-zinc-300 rounded-lg px-3 py-1.5 whitespace-nowrap shadow-lg">
+                              {[1, 2, 3, 4, 5].map((i) => (
+                                <div
+                                  key={i}
+                                  className={`w-2 h-2 rounded-full ${
+                                    i <= (skill.level || 0)
+                                      ? 'bg-accent-blue'
+                                      : 'bg-zinc-300'
+                                  }`}
+                                />
+                              ))}
+                            </div>
+                          </div>
+                        </span>
                       );
                     })}
                   </div>
@@ -88,47 +88,6 @@ export default function Skills() {
               );
             })}
           </div>
-
-          <motion.div
-            key={activeSkill}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.25 }}
-            className="mt-6 glass rounded-2xl p-5 border border-border/60"
-          >
-            <p className="text-xs uppercase tracking-[0.2em] text-text-muted mb-3">Skill Detail</p>
-            <div className="flex items-center gap-3 mb-3">
-              <div className="h-2 w-2 rounded-full bg-accent-blue" />
-              <h3 className="text-lg font-semibold text-text-primary">{activeSkillName}</h3>
-            </div>
-            <div className="flex flex-wrap gap-4 mb-4 text-sm">
-              {level && (
-                <span className="flex items-center gap-1.5">
-                  <span className="text-text-muted">Level:</span>
-                  <span className="text-text-secondary font-medium">{level}</span>
-                </span>
-              )}
-              {years && (
-                <span className="flex items-center gap-1.5">
-                  <span className="text-text-muted">Years:</span>
-                  <span className="text-text-secondary font-medium">{years}+</span>
-                </span>
-              )}
-            </div>
-            <p className="text-sm text-text-secondary max-w-3xl mb-4">{detail}</p>
-            {projects.length > 0 && (
-              <div>
-                <p className="text-xs text-text-muted mb-2">Related Projects</p>
-                <div className="flex flex-wrap gap-2">
-                  {projects.map((project) => (
-                    <span key={project} className="px-2.5 py-1 rounded-full bg-surface text-xs text-text-secondary border border-border/60">
-                      {project}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-          </motion.div>
         </motion.div>
       </div>
     </section>

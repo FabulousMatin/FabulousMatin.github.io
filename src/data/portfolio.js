@@ -3,7 +3,6 @@ export const personalInfo = {
   surname: "Bazrafshan",
   fullName: "Matin Bazrafshan",
   title: "ML/AI Software Engineer",
-  tagline: "Building intelligent systems that scale",
   email: "matinbazrafshan2003@gmail.com",
   phone: "+98 901 264 9743",
   location: "Tehran, Iran",
@@ -11,215 +10,47 @@ export const personalInfo = {
   github: "https://github.com/FabulousMatin",
   linkedin: "https://linkedin.com/in/matinbazrafshan2003",
   telegram: "https://t.me/MatinBzr",
-  profile: [
-    "Highly motivated and hardworking, always eager to learn new things.",
-    "Demonstrates a strong sense of responsibility.",
-    "Track record of achieving academic excellence and actively participating in other activities."
-  ],
-  summary: "ML/AI Software Engineer with expertise in building scalable machine learning systems, MLOps pipelines, and AI-powered applications. Passionate about leveraging data and artificial intelligence to solve complex real-world problems."
+  summary: "ML/AI Software Engineer focused on building scalable machine learning systems, MLOps pipelines, and AI-powered applications. I am interested in transforming machine learning ideas into reliable production systems that create real-world impact. I approach challenges with curiosity, responsibility, and a continuous improvement mindset, while consistently pursuing technical growth and excellence."
 };
 
 export const skills = {
-    "Software": [
-    {
-      name: "Python",
-      icon: "code-2",
-      level: "Expert",
-      years: 5,
-      detail: "Primary language for backend systems, ML, and automation. Used extensively for building APIs, data pipelines, and ML workflows.",
-      projects: ["GeoRAG", "AI Coding Agent", "ML Infrastructure"]
-    },
-    {
-      name: "FastAPI",
-      icon: "zap",
-      level: "Expert",
-      years: 3,
-      detail: "Typed APIs for fast, maintainable backend services. Built multiple production APIs with authentication, WebSocket support, and async processing.",
-      projects: ["Code Execution Service", "RAG API Gateway"]
-    },
-    {
-      name: "PostgreSQL",
-      icon: "database",
-      level: "Advanced",
-      years: 3,
-      detail: "Relational modeling, SQL query optimization, and database design. Experience with complex joins, indexing strategies, and stored procedures.",
-      projects: ["User Management System", "Analytics Dashboard"]
-    },
-    {
-      name: "MongoDB",
-      icon: "layers",
-      level: "Advanced",
-      years: 3,
-      detail: "Flexible document storage for application data. Schema design, aggregation pipelines, and replica set management.",
-      projects: ["GeoRAG Metadata Store", "Application Logs"]
-    },
-    {
-      name: "Go",
-      icon: "circle-dot",
-      level: "Intermediate",
-      years: 2,
-      detail: "Concurrent, performance-oriented service development. Goroutines, channels, and building high-throughput microservices.",
-      projects: ["High-Performance Data Processing"]
-    },
-    {
-      name: "Java Spring",
-      icon: "coffee",
-      level: "Intermediate",
-      years: 2,
-      detail: "Enterprise backend systems with Spring Boot, Spring Security, and Spring Data. Building scalable REST APIs and microservices.",
-      projects: ["Enterprise Backend Services"]
-    },
+  "Software": [
+    { name: "Python", level: 5 },
+    { name: "FastAPI", level: 4 },
+    { name: "Python Async / Threading / Multiprocessing", level: 4 },
+    { name: "Clean Coding", level: 5 },
+    { name: "Software Architecture", level: 3 },
+    { name: "Design Patterns", level: 3 },
+    { name: "PostgreSQL", level: 3 },
+    { name: "MongoDB", level: 4 },
+    { name: "Java Spring", level: 3 },
+    { name: "Go", level: 2 },
   ],
-
   "Artificial Intelligence": [
-    {
-      name: "LLM Integration",
-      icon: "bot",
-      level: "Expert",
-      years: 3,
-      detail: "Integrating language models into products and workflows. Experience with OpenAI, Anthropic, and open-source models like Llama and Mistral.",
-      projects: ["AI Coding Agent", "RAG System", "Chat Interfaces"]
-    },
-    {
-      name: "AI Agents",
-      icon: "users",
-      level: "Advanced",
-      years: 2,
-      detail: "Tool-using systems that can plan, act, and adapt. Built agents with tool calling, self-debugging, and knowledge expansion capabilities.",
-      projects: ["AI Coding Agent", "Autonomous Data Pipeline"]
-    },
-    {
-      name: "RAG Systems",
-      icon: "file-search",
-      level: "Expert",
-      years: 2,
-      detail: "Retrieval-augmented generation with structured knowledge. Multi-modal retrieval, embedding strategies, and hybrid search approaches.",
-      projects: ["GeoRAG Enterprise System"]
-    },
-    {
-      name: "vLLM",
-      icon: "eye",
-      level: "Advanced",
-      years: 2,
-      detail: "Efficient inference and serving for large language models. PagedAttention, continuous batching, and model optimization for production.",
-      projects: ["Production LLM Serving"]
-    },
-    {
-      name: "Vector Databases",
-      icon: "message-square",
-      level: "Advanced",
-      years: 2,
-      detail: "Semantic retrieval and embedding-based search. Experience with ChromaDB, Qdrant, and pgvector for similarity search.",
-      projects: ["GeoRAG", "Semantic Search API"]
-    },
-    {
-      name: "llama.cpp",
-      icon: "cpu",
-      level: "Intermediate",
-      years: 2,
-      detail: "Lightweight local model inference workflows. GGUF model optimization, quantization techniques, and CPU-based inference.",
-      projects: ["Local LLM Deployment"]
-    },
+    { name: "LLM Integration", level: 5 },
+    { name: "AI Agents", level: 5 },
+    { name: "LangGraph", level: 4 },
+    { name: "RAG Systems", level: 5 },
+    { name: "vLLM", level: 3 },
+    { name: "llama.cpp", level: 3 },
   ],
   "Machine Learning": [
-    {
-      name: "Scikit-learn",
-      icon: "brain",
-      level: "Expert",
-      years: 5,
-      detail: "Classical machine learning workflows, evaluation, and model iteration. Classification, regression, clustering, and feature engineering.",
-      projects: ["Tabular Data Analysis", "Predictive Models"]
-    },
-    {
-      name: "PyTorch",
-      icon: "network",
-      level: "Advanced",
-      years: 4,
-      detail: "Deep learning experiments and neural network training. CNNs, RNNs, Transformers, and custom model architectures.",
-      projects: ["Deep Learning Models", "Neural Architecture Experiments"]
-    },
-    {
-      name: "Deep Learning",
-      icon: "gamepad2",
-      level: "Advanced",
-      years: 4,
-      detail: "Representation learning with modern neural architectures. Attention mechanisms, transformers, and advanced optimization techniques.",
-      projects: ["LLM Fine-tuning", "Custom Neural Networks"]
-    },
-    {
-      name: "MLOps",
-      icon: "git-branch",
-      level: "Advanced",
-      years: 3,
-      detail: "Reliable training, deployment, and monitoring pipelines. MLflow, Kubeflow, experiment tracking, and model versioning.",
-      projects: ["ML Training Pipeline", "Model Deployment System"]
-    },
-    {
-      name: "XGBoost",
-      icon: "tree-pine",
-      level: "Advanced",
-      years: 3,
-      detail: "Fast gradient boosting for structured and tabular data. GPU acceleration, hyperparameter tuning, and model interpretation.",
-      projects: ["Financial Prediction Models", "Feature Importance Analysis"]
-    },
-    {
-      name: "Ray / joblib",
-      icon: "rays",
-      level: "Advanced",
-      years: 2,
-      detail: "Distributed and parallel execution for scalable ML workflows. Ray Tune, Ray Serve, and parallel training across clusters.",
-      projects: ["8x Training Speedup", "Distributed ML Pipeline"]
-    },
+    { name: "Scikit-learn", level: 5 },
+    { name: "Numpy / Pandas", level: 5 },
+    { name: "Deep Learning", level: 4 },
+    { name: "XGBoost", level: 5 },
+    { name: "PyTorch", level: 4 },
+    { name: "Ray / joblib", level: 3 },
+    { name: "MLOps", level: 4 },
+    { name: "Vector Databases", level: 4 },
   ],
   "DevOps / Tools": [
-    {
-      name: "Docker",
-      icon: "container",
-      level: "Expert",
-      years: 4,
-      detail: "Repeatable containerized environments and delivery. Multi-stage builds, docker-compose, and container orchestration.",
-      projects: ["All Production Services"]
-    },
-    {
-      name: "Kubernetes",
-      icon: "cloud",
-      level: "Advanced",
-      years: 3,
-      detail: "Orchestration for scalable workloads. Deployments, services, ingress, persistent volumes, and resource management.",
-      projects: ["Cloud Infrastructure", "Auto-scaling Services"]
-    },
-    {
-      name: "MinIO",
-      icon: "server",
-      level: "Advanced",
-      years: 2,
-      detail: "S3-compatible object storage layer. Bucket policies, replication, and integration with ML pipelines.",
-      projects: ["ML Artifact Storage", "Data Lake"]
-    },
-    {
-      name: "CI/CD",
-      icon: "git-pull-request",
-      level: "Advanced",
-      years: 3,
-      detail: "Automated build, test, and release pipelines. GitHub Actions, GitLab CI, and automated deployments.",
-      projects: ["CI/CD Pipeline Overhaul"]
-    },
-    {
-      name: "Linux",
-      icon: "terminal",
-      level: "Expert",
-      years: 5,
-      detail: "Server-side development and operations. Shell scripting, system administration, and performance tuning.",
-      projects: ["Server Management", "DevOps Automation"]
-    },
-    {
-      name: "Git",
-      icon: "git-merge",
-      level: "Expert",
-      years: 5,
-      detail: "Version control and collaboration. Branching strategies, code reviews, and merge conflict resolution.",
-      projects: ["All Projects"]
-    },
+    { name: "Git", level: 4 },
+    { name: "Docker", level: 3 },
+    { name: "Kubernetes", level: 3, },
+    { name: "MLOps", level: 4 },
+    { name: "CI/CD", level: 3 },
+    { name: "Linux", level: 3 },
   ],
 };
 
@@ -232,8 +63,7 @@ export const experience = [
     summary: "Leading engineering execution, delivery planning, and technical direction for the ML/AI product stack.",
     achievements: [
       "Guide architecture decisions for building AI-enabled services.",
-      "Own roadmap coordination across product, engineering, and ML delivery.",
-      "Improve execution cadence, review quality, and cross-functional alignment."
+      "Improved delivery processes, code quality, and team coordination."
     ],
     highlights: [
       "Execution planning",
@@ -255,9 +85,9 @@ export const experience = [
       "Optimized the TA library by fully vectorizing operations, significantly reducing latency in the time-series data pipeline."
     ],
     highlights: [
+      "ML pipeline optimization and acceleration",
+      "Backend services",
       "Scalable AI infrastructure",
-      "FastAPI / Kubernetes backend",
-      "Ray + Joblib acceleration"
     ]
   },
 ];
@@ -265,21 +95,65 @@ export const experience = [
 export const projects = [
   {
     name: "GeoRAG",
-    description: "Enterprise Document Retrieval & RAG System. A from-scratch multimodal RAG system featuring text extraction, semantic search, and LLM question-answering across PDFs, text, and images.",
+    description: "Enterprise Document Retrieval & RAG System.",
     technologies: ["Python", "FastAPI", "ChromaDB", "MongoDB", "llama.cpp", "Docker"],
-    github: "https://github.com/FabulousMatin/georag",
-    demo: "https://georag.example.com",
+    github: "",
+    isPrivate: true,
     details: [
-      "Build a polished case-study modal with screenshots, architecture notes, demo GIFs, and implementation notes.",
-      "Add a timeline of milestones, a feature breakdown, and a gallery area for media.",
-      "Keep the project card minimal and use the modal for the full narrative."
+      "A from-scratch multimodal RAG system featuring text extraction, semantic search, and LLM question-answering across PDFs, text, and images."
     ],
     mediaSlots: {
-      heroImage: "",
-      gallery: [],
+      images: [
+      ],
       gifs: []
     },
-    validationLink: "https://github.com/FabulousMatin/georag",
+  },
+{
+    name: "gmprof",
+    description: "A small NVIDIA GPU VRAM profiler for Python.",
+    technologies: ["Python", "NVML", "NumPy", "Click", "Matplotlib"],
+    github: "https://github.com/FabulousMatin/gmprof",
+    isPrivate: false,
+    details: [
+      "mprof-style CLI for sampling a subprocess",
+      "Plotting and text reports for sampled .dat files",
+      "profiling as both a decorator and context manager",
+    ],
+    mediaSlots: {
+      images: [
+        "/gmprof.png"
+      ],
+      gifs: []
+    },
+  },
+  {
+    name: "Deep Neural Networks Course Projects",
+    description: "Deep learning assignments covering CNNs, RNNs, Transformers, and generative models.",
+    technologies: ["Python", "PyTorch", "NumPy", "Pandas", "TensorFlow", "Keras"],
+    github: "https://github.com/Shahriar-0/Neural-Networks-and-Deep-Learning-Course-Projects-S2024",
+    isPrivate: false,
+    details: [
+      "Adversarial attacks (FGSM, PGD) on MNIST",
+      "CNN fine-tuning (VGG16, ResNet-50) for classification",
+      "U-Net for semantic segmentation, Faster R-CNN for object detection",
+      "Hybrid CNN-LSTM for sentiment analysis and RUL prediction",
+      "Transformer fine-tuning for fake news detection",
+      "VAE and Pix2Pix for image generation and translation"
+    ],
+    mediaSlots: {
+      images: [
+        "/NN_1.png",
+        "/NN_2.png",
+        "/NN_3.png",
+        "/NN_4.png",
+        "/NN_5.png",
+        "/NN_6.png",
+        "/NN_7.png",
+        "/NN_8.png",
+        "/NN_9.png"
+      ],
+      gifs: []
+    },
   }
 ];
 
