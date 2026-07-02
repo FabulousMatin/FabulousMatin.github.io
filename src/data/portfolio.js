@@ -1,3 +1,5 @@
+const publicAsset = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
+
 export const personalInfo = {
   name: "Matin",
   surname: "Bazrafshan",
@@ -96,22 +98,21 @@ export const projects = [
   {
     name: "GeoRAG",
     description: "Enterprise Document Retrieval & RAG System.",
-    technologies: ["Python", "FastAPI", "ChromaDB", "MongoDB", "llama.cpp", "Docker"],
+    technologies: ["Python", "FastAPI", "ChromaDB", "MongoDB", "llama.cpp"],
     github: "",
     isPrivate: true,
     details: [
       "A from-scratch multimodal RAG system featuring text extraction, semantic search, and LLM question-answering across PDFs, text, and images."
     ],
     mediaSlots: {
-      images: [
-      ],
-      gifs: []
+      images: [],
+      gifs: [publicAsset("georag.gif")]
     },
   },
 {
     name: "gmprof",
     description: "A small NVIDIA GPU VRAM profiler for Python.",
-    technologies: ["Python", "NVML", "NumPy", "Click", "Matplotlib"],
+    technologies: ["Python", "NVML", "Matplotlib"],
     github: "https://github.com/FabulousMatin/gmprof",
     isPrivate: false,
     details: [
@@ -121,7 +122,7 @@ export const projects = [
     ],
     mediaSlots: {
       images: [
-        "/gmprof.png"
+        publicAsset("gmprof.png")
       ],
       gifs: []
     },
@@ -142,15 +143,15 @@ export const projects = [
     ],
     mediaSlots: {
       images: [
-        "/NN_1.png",
-        "/NN_2.png",
-        "/NN_3.png",
-        "/NN_4.png",
-        "/NN_5.png",
-        "/NN_6.png",
-        "/NN_7.png",
-        "/NN_8.png",
-        "/NN_9.png"
+        publicAsset("NN_1.png"),
+        publicAsset("NN_2.png"),
+        publicAsset("NN_3.png"),
+        publicAsset("NN_4.png"),
+        publicAsset("NN_5.png"),
+        publicAsset("NN_6.png"),
+        publicAsset("NN_7.png"),
+        publicAsset("NN_8.png"),
+        publicAsset("NN_9.png")
       ],
       gifs: []
     },

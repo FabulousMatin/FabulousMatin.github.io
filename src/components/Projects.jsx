@@ -12,7 +12,10 @@ export default function Projects() {
     setCurrentSlide(0);
   };
 
-  const mediaItems = activeProject?.mediaSlots?.images || [];
+  const mediaItems = [
+    ...(activeProject?.mediaSlots?.images ?? []),
+    ...(activeProject?.mediaSlots?.gifs ?? []),
+  ];
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % mediaItems.length);
